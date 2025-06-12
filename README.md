@@ -1,4 +1,3 @@
-# README.md
 # INU Service Status Monitor
 
 Real-time status monitoring dashboard for Incheon National University services.
