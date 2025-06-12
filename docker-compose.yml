@@ -53,7 +53,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+      - "8080:80"
     depends_on:
       backend:
         condition: service_healthy
@@ -70,3 +70,10 @@ volumes:
 networks:
   default:
     driver: bridge
+
+deploy:
+  resources:
+    limits:
+      memory: 512M  # Backend
+      memory: 256M  # Frontend
+      memory: 512M  # PostgreSQL

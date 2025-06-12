@@ -48,7 +48,8 @@ class Database {
         response_time INTEGER,
         error_message TEXT,
         checked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        INDEX (service_id, checked_at)
+        CREATE INDEX IF NOT EXISTS idx_service_checks_service_time 
+        ON service_checks(service_id, checked_at);
       );
     `
 
